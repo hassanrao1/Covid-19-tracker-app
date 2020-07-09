@@ -61,11 +61,9 @@ export default function InfoGrids() {
 
       delete data.results[0].source;
       setGlobalData(data.results[0]);
-      //console.log(data.results[0]);
     }
     getData();
   }, []);
-  //console.log(globalData);
 
   return (
     // <div className={classes.root}>

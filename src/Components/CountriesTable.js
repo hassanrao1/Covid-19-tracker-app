@@ -44,15 +44,12 @@ export default function CountriesTable() {
         "https://api.thevirustracker.com/free-api?countryTotals=ALL"
       );
       let data = await response.json();
-      //console.log(data);
 
       delete data.sitedata;
       setGlobalData(Object.values(Object.values(data.countryitems)[0]));
-      // console.log(data.countryitems[0]);
     }
     getData();
   }, []);
-  //console.log(globalData);
 
   return (
     <TableContainer component={Paper}>

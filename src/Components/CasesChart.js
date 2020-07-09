@@ -19,7 +19,6 @@ export default function CasesChart({ confirmed, recovered, deaths, country }) {
   useEffect(() => {
     async function fetchApi() {
       const response = await fetchDailyData();
-      // const data = await response.json();
 
       setGlobalData(response);
     }
