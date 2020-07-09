@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import virus from "./virus.png";
-import death from "./death.png";
-import resilience from "./resilience.png";
+import virus from "../images/virus.png";
+import death from "../images/death.png";
+import resilience from "../images/resilience.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 800,
+    maxWidth: 950,
+
     margin: "0 auto",
-    marginTop: "50px",
+    marginTop: "40px",
     fontFamily: "Montserrat",
   },
 
@@ -19,29 +20,29 @@ const useStyles = makeStyles((theme) => ({
   },
   totalCases: {
     backgroundColor: "#28c7fa",
-    padding: theme.spacing(4),
+    padding: theme.spacing(2),
     textAlign: "center",
     textTransform: "capitalize",
-    height: "1000",
-    width: "50",
+    maxHeight: "25vh",
+    minWidth: "250px",
     color: "white",
   },
   totalDeaths: {
     backgroundColor: "#ff304f",
-    padding: theme.spacing(4),
+    padding: theme.spacing(2),
     textAlign: "center",
     textTransform: "capitalize",
-    height: "1000",
-    width: "50",
+    maxHeight: "25vh",
+    minWidth: "250px",
     color: "white",
   },
   totalRec: {
     backgroundColor: "#22eaaa",
-    padding: theme.spacing(4),
+    padding: theme.spacing(2),
     textAlign: "center",
     textTransform: "capitalize",
-    height: "1000",
-    width: "50",
+    maxHeight: "25vh",
+    minWidth: "250px",
     color: "white",
   },
 }));
@@ -55,6 +56,7 @@ export default function InfoGrids() {
       const response = await fetch(
         "https://api.thevirustracker.com/free-api?global=stats"
       );
+
       let data = await response.json();
 
       delete data.results[0].source;
@@ -83,7 +85,7 @@ export default function InfoGrids() {
     // </div>
 
     <div className={classes.root}>
-      <Grid container spacing={5}>
+      <Grid container direction="column" spacing={1}>
         <Grid item xs={12} sm={4}>
           <Paper className={classes.totalCases} elevation={3}>
             <img src={virus} height="35px" alt="virus icon" />

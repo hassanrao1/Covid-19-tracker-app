@@ -11,7 +11,7 @@ import Paper from "@material-ui/core/Paper";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: "#39bdc8",
     color: theme.palette.common.white,
   },
   body: {
@@ -48,7 +48,7 @@ export default function CountriesTable() {
 
       delete data.sitedata;
       setGlobalData(Object.values(Object.values(data.countryitems)[0]));
-      console.log(data.countryitems[0]);
+      // console.log(data.countryitems[0]);
     }
     getData();
   }, []);
