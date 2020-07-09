@@ -66,22 +66,6 @@ export default function InfoGrids() {
   }, []);
 
   return (
-    // <div className={classes.root}>
-    //   <Grid container spacing={2}>
-    //     {Object.keys(globalData).map((key, ind) => {
-
-    //       return (
-    //         <Grid item xs={12} sm={4} key={ind}>
-    //           <Paper className={classes.paper} elevation={3}>
-    //             <h3 className={classes.heading}>{key.replace(/_/g, " ")}</h3>
-    //             <h3> {globalData[key]}</h3>
-    //           </Paper>
-    //         </Grid>
-    //       );
-    //     })}
-    //   </Grid>
-    // </div>
-
     <div className={classes.root}>
       <Grid container direction="column" spacing={1}>
         <Grid item xs={12} sm={4}>
